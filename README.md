@@ -8,6 +8,9 @@
 - Sign up from
 - Form Validation
 - useRef
+- Firebase setup
+- Authentication using firebase
+- Deployment using firebase
 
 # Features
 
