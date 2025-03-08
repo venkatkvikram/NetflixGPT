@@ -2,6 +2,12 @@
 
 - Vite + React
 - Configured with Tailwind
+- Header
+- Routing
+- Login Form
+- Sign up from
+- Form Validation
+- useRef
 
 # Features
 
