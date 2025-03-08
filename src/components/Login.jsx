@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { validateCredentials } from "../utils/validateCredentials";
+import { auth } from "../utils/firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
@@ -13,11 +15,43 @@ const Login = () => {
   const handleSignInClick = () => {
     const message = validateCredentials(email.current.value, password.current.value);
     setErrorMessage(message);
+    if (message) return;
+    if (!signIn) {
+      //signup
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log("user", user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + message);
+          // ..
+        });
+    } else {
+      //login
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + message);
+        });
+    }
   };
 
   const toggleSignInForm = () => {
     setSignIn(!signIn);
   };
+
+
   return (
     <div>
       <Header />
@@ -32,8 +66,10 @@ const Login = () => {
         {!signIn && <input ref={fullname} type="text" placeholder="fullname" className="p-2 w-full my-2 bg-blue-50" />}
         <input ref={email} type="text" placeholder="email" className="p-2 w-full my-2 bg-blue-50" />
         <input ref={password} type="password" placeholder="password" className="p-2 w-full my-2 bg-amber-50" />
-        <p className="text-red font-bold text-lg cursor-pointer text-red-600 font-bold">{errorMessage}</p>
-        <button className="p-4 my-4 bg-amber-800 w-full" onClick={handleSignInClick}>{signIn ? "Sign in" : "Sign up"}</button>
+        <p className="text-red text-lg cursor-pointer text-red-600 font-bold">{errorMessage}</p>
+        <button className="p-4 my-4 bg-amber-800 w-full" onClick={handleSignInClick}>
+          {signIn ? "Sign in" : "Sign up"}
+        </button>
         <p className="text-white cursor-pointer" onClick={toggleSignInForm}>
           {signIn ? "New to Netflix? Sign Up" : "Already have an account? Sign In"}
         </p>
