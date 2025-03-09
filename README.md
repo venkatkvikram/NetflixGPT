@@ -11,6 +11,12 @@
 - Firebase setup
 - Authentication using firebase
 - Deployment using firebase
+- Create Signup user account
+- Implement sign in user API(firebase)
+- Created Redux store using UserSlice
+- Implemented Signout
+- Update Profile API
+- Fetch movies from TMDb
 
 # Features
 

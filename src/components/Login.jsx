@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { validateCredentials } from "../utils/validateCredentials";
 import { auth } from "../utils/firebase";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
@@ -11,6 +12,7 @@ const Login = () => {
   const fullname = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
+  const navigate = useNavigate();
 
   const handleSignInClick = () => {
     const message = validateCredentials(email.current.value, password.current.value);
@@ -22,7 +24,14 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log("user", user);
+          updateProfile(auth, {
+            displayName: fullname.current.value, photoURL: "https://avatars.githubusercontent.com/u/85410384?v=4"
+          }).then(() => {
+            navigate("/browse");
+          }).catch((error) => {
+            setErrorMessage(error?.message)
+          });
+          
           // ...
         })
         .catch((error) => {
@@ -37,7 +46,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          // ...
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -50,7 +59,6 @@ const Login = () => {
   const toggleSignInForm = () => {
     setSignIn(!signIn);
   };
-
 
   return (
     <div>
