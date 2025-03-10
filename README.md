@@ -17,9 +17,24 @@
 - Implemented Signout
 - Update Profile API
 - Bug fix: Routes protected.
+- Unsubscribed to onAuthState
+- Register TMDB API & create an app & get access token
+- Go to Documentation 
+    - API reference
+        - Get Data from TMDB now playing movies list
 - Fetch movies from TMDb
+- Get data from TMDB now playing movie lists API
+- Custom Hook for Now playing movies
+- Create movieSlice
+- Planning for Main Container and Rest Container
+- Fetch Data for Trailer Video
+- Update store with Trailer video data
+- Embed youtube video and make it autoplay and mute
+- Tailwind CSS to make container same as netflix one
 
-# Features
+
+
+
 
 - Browse
     - Header
