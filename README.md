@@ -31,8 +31,8 @@
 - Update store with Trailer video data
 - Embed youtube video and make it autoplay and mute
 - Tailwind CSS to make container same as netflix one
-
-
+- Build Secondary/Rest of the component
+- Added Movies on categories. Each category having it's own custom hook.
 
 
 
