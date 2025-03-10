@@ -16,6 +16,7 @@
 - Created Redux store using UserSlice
 - Implemented Signout
 - Update Profile API
+- Bug fix: Routes protected.
 - Fetch movies from TMDb
 
 # Features
