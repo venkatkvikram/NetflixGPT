@@ -19,9 +19,9 @@
 - Bug fix: Routes protected.
 - Unsubscribed to onAuthState
 - Register TMDB API & create an app & get access token
-- Go to Documentation 
-    - API reference
-        - Get Data from TMDB now playing movies list
+- Go to Documentation
+  - API reference
+    - Get Data from TMDB now playing movies list
 - Fetch movies from TMDb
 - Get data from TMDB now playing movie lists API
 - Custom Hook for Now playing movies
@@ -33,17 +33,24 @@
 - Tailwind CSS to make container same as netflix one
 - Build Secondary/Rest of the component
 - Added Movies on categories. Each category having it's own custom hook.
+  - Build Movielist
+  - Build Moviecard
+- GPT Search Page
+- GPT Search Bar
+- Multi-language Feature in our App
 
 
 
-- Browse
-    - Header
-    - Main movie
-        - Trailer in bg
-        - Title and Description
-        - Movie suggestions
-            - Movie Lists * N
-- Netflix GPT
-    - Search Bar
+
+
+
+# Browse
+  - Header
+  - Main movie
+    - Trailer in bg
+    - Title and Description
     - Movie suggestions
-    
+      - Movie Lists \* N
+- Netflix GPT
+  - Search Bar
+  - Movie suggestions
