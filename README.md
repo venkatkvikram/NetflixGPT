@@ -38,9 +38,15 @@
 - GPT Search Page
 - GPT Search Bar
 - Multi-language Feature in our App
+- Get search api key (Not done - API asking to pay )
+- Gpt search API call (Not done - API asking to pay )
+- fetched GPT movie suggestions from TMDB 
+- created gptSlice added Data
+- Reused Movie List component to make movie suggestion container
+- Memoization
+- Responsive
 
-
-
+ 
 
 
 
