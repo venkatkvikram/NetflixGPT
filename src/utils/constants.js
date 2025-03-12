@@ -6,7 +6,7 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YmNlMjFjYTNiNzU3OTE1YmQ4YWNjMTFhMzEwNjdjNyIsIm5iZiI6MTc0MTYwNTUzMS4wNTUsInN1YiI6IjY3Y2VjYTliYThiMzM1MjU3ZTJhYWMxZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ztYHem3YOdekGyMKuXniSFoT-CFrxdpRGfLBPmh8_Ck",
+      `Bearer ${import.meta.env.VITE_PUBLIC_TMBD_TOKEN}`,
   },
 };
 
@@ -29,3 +29,4 @@ export const SUPPORTED_LANGUAGES = [
     name: "Spanish",
   },
 ];
+

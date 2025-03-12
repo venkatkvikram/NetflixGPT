@@ -69,14 +69,14 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div >
       <Header />
       <div className="absolute">
-        <img src={BG_URL} />
+        <img className="h-screen object-cover" src={BG_URL} />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 bg-opacity-80"
+        className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 "
       >
         <h1 className="font-bold text-white text-3xl py-4">{signIn ? "Sign in" : "Sign Up"}</h1>
         {!signIn && <input ref={fullname} type="text" placeholder="fullname" className="p-2 w-full my-2 bg-blue-50" />}

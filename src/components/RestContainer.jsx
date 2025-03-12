@@ -8,11 +8,11 @@ const RestContainer = () => {
   return (
     movieList.nowPlayingMovies && (
       <div className="bg-black">
-        <div className="-mt-72 pl-12 relative z-20">
+        <div className="mt-0 md:-mt-72 pl-4 md:pl-12 relative z-20">
           <MovieList title={"Now Playing"} movies={movieList.nowPlayingMovies} />
           <MovieList title={"Popular Movies"} movies={movieList.popularMovies} />
-          <MovieList title={"Top Rated"} movies={movieList.topRatedMovies} />
-          <MovieList title={"Upcoming Movies"} movies={movieList.upComingMovies} />
+          {/* <MovieList title={"Top Rated"} movies={movieList.topRatedMovies} />
+          <MovieList title={"Upcoming Movies"} movies={movieList.upComingMovies} /> */}
           {/* {
         Movie list - popular
         Movie list - Now trending
